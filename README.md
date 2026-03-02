@@ -12,7 +12,7 @@
 ## 技术栈
 
 - **框架**: FastAPI
-- **数据库**: MySQL (SQLAlchemy ORM)
+- **数据库**: PostgreSQL (SQLAlchemy ORM)
 - **图数据库**: Neo4j
 - **认证**: JWT (python-jose)
 - **密码加密**: bcrypt (passlib)
@@ -34,13 +34,18 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-编辑 `.env` 文件，配置你的 MySQL 和 Neo4j 连接信息。
+编辑 `.env` 文件，配置你的 PostgreSQL 和 Neo4j 连接信息。
 
 ### 3. 准备数据库
 
-**MySQL:**
+**PostgreSQL:**
 ```sql
-CREATE DATABASE healthpilot CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE healthpilot;
+```
+
+或使用 psql:
+```bash
+psql -U postgres -c "CREATE DATABASE healthpilot;"
 ```
 
 **Neo4j:**
